@@ -16,6 +16,7 @@ This **Android application** is made as a contribution towards preservation of e
 
 ## Concepts & components used:
 <br>
+
 * ListView with CustomAdapter
 * Fragments
 * MediaPlayer
