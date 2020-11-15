@@ -23,3 +23,39 @@ This **Android application** is made as a contribution towards preservation of e
 * Android Activity Lifecycle
 * ViewPager2 with fragmentStateAdapter
 * TabLayout & TabLayoutMediator
+## Screen:
+
+## Repository's Structure:
+<br>
+<pre>
+├───androidTest
+│   └───java
+│       └───com
+│           └───example
+│               └───android
+│                   └───miwok
+├───main
+│   ├───java
+│   │   └───com
+│   │       └───example
+│   │           └───android
+│   │               └───miwok
+│   └───res
+│       ├───drawable
+│       ├───drawable-v24
+│       ├───layout
+│       ├───mipmap-anydpi-v26
+│       ├───mipmap-hdpi
+│       ├───mipmap-mdpi
+│       ├───mipmap-xhdpi
+│       ├───mipmap-xxhdpi
+│       ├───mipmap-xxxhdpi
+│       ├───raw
+│       └───values
+└───test
+    └───java
+        └───com
+            └───example
+                └───android
+                    └───miwok
+                   </pre>
