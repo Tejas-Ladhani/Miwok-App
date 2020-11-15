@@ -23,7 +23,10 @@ This **Android application** is made as a contribution towards preservation of e
 * Android Activity Lifecycle
 * ViewPager2 with fragmentStateAdapter
 * TabLayout & TabLayoutMediator
+
 ## Screen:
+<image src="https://github.com/Tejas-Ladhani/Miwok-App/blob/main/output.gif"/>
+<br>
 
 ## Repository's Structure:
 <br>
