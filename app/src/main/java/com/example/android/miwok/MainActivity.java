@@ -1,18 +1,52 @@
 package com.example.android.miwok;
-import androidx.appcompat.app.AppCompatActivity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity  {
+import android.content.pm.ActivityInfo;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        ViewPager2 viewPager = findViewById(R.id.viewpager);
 
-        TextView numbers = (TextView) findViewById(R.id.numbers);
+        // Create an adapter that knows which fragment should be shown on each page
+        CategoryAdapter adapter = new CategoryAdapter(getSupportFragmentManager(), getLifecycle());
+
+        // Set the adapter onto the view pager
+        viewPager.setAdapter(adapter);
+        TabLayout tabLayout = findViewById(R.id.sliding_tabs);
+        new TabLayoutMediator(tabLayout, viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                switch (position) {
+                    case 0:
+                        tab.setText("NUMBERS");
+                        break;
+                    case 1:
+                        tab.setText("FAMILY");
+                        break;
+                    case 2:
+                        tab.setText("COLORS");
+                        break;
+                    case 3:
+                        tab.setText("PHRASES");
+                        break;
+
+                }
+            }
+        }).attach();
+    }
+        /*TextView numbers = (TextView) findViewById(R.id.numbers);
         // Set a click listener on that View
 
         numbers.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +85,7 @@ public class MainActivity extends AppCompatActivity  {
                 startActivity(familyIntent);
             }
             });
-    }
+    }*/
 
 //    public void ViewNumberList(View view){
 //        //the first argument of the constructor is the current activity (will useful when we press back button on our phone) ANd the second arguement : is the activity , we want.
@@ -60,7 +94,6 @@ public class MainActivity extends AppCompatActivity  {
 //        Intent i=new Intent(this,NumbersActivity.class);
 //        startActivity(i);
 //    }
-
 
 
 }

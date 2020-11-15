@@ -1,7 +1,6 @@
 package com.example.android.miwok;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,18 +9,28 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
+    //ID for color
+    private int mColorRecourceId;
+
+    /**
+     * Modified constructors for different actvitie
+     */
     WordAdapter(Activity context, ArrayList<Word> words) {
         super(context, 0, words);
     }
 
-    @NonNull
+    WordAdapter(Activity context, ArrayList<Word> words, int colorResourceId) {
+        super(context, 0, words);
+        this.mColorRecourceId = colorResourceId;
+    }
 
+    @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
@@ -45,6 +54,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
         engTextView.setText(currentWord.getEngTanslation());
+
         ImageView imgView =(ImageView)listItemView.findViewById(R.id.image);
 
 
@@ -53,6 +63,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         else{
             imgView.setImageResource(currentWord.getResourceId());
         }
+
         /*
             // Find the ImageView in the list_item.xml layout with the ID list_item_icon
             ImageView iconView = (ImageView) listItemView.findViewById(R.id.list_item_icon);
@@ -63,6 +74,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
+
+        View textcontainer = listItemView.findViewById(R.id.AllTextView);
+        int color = ContextCompat.getColor(getContext(), mColorRecourceId);
+        textcontainer.setBackgroundColor(color);
+
+
         return listItemView;
     }
 }

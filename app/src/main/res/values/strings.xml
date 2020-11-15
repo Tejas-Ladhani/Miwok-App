@@ -13,4 +13,9 @@
 
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
     <string name="category_family">Family Members</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lets_learn_miwok">Lets Learn Miwok</string>
+    <string name="with_ease">with EASE</string>
+    <string name="image_related_to_words">image related to words</string>
 </resources>
