@@ -6,7 +6,7 @@ The Miwok or Miwokan languages , also known as Moquelumnan or Miwuk, are a group
 for more : https://en.wikipedia.org/wiki/Miwok_languages
 
 ## About this Application:
-This **Android application** is made as a contribution towards preservation of endangered languages (Miwok is one of them).  
+This **Android application** is a contribution towards preservation of endangered languages (Miwok is one of them).By using this application user can learn the basics as well as the pronouciations of different words in Miwok Language.    
 <br>
 * Language used : **JAVA**
 * compileSdkVersion : **30**
